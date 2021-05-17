@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0" style="-fx-background-color: #6F6363;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="WHITE" layoutX="617.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Правила">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Text>
+      <Button fx:id="button_board" layoutX="576.0" layoutY="250.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" text="Шахамтная доска" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_figures" layoutX="576.0" layoutY="356.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" text="Шахматные фигуры" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_movement" layoutX="576.0" layoutY="462.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" text="Передвижения фигур" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_other_rools" layoutX="576.0" layoutY="568.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="276.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" text="Другие правила" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
