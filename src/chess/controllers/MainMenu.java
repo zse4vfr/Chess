@@ -16,6 +16,10 @@ import static chess.controllers.Exit.ExitFunc;
 public class MainMenu {
 
     @FXML
+    private Button button_load;
+    @FXML
+    private Button button_rules;
+    @FXML
     private Button button_exit;
     @FXML
     private Button button_play2;
@@ -31,25 +35,8 @@ public class MainMenu {
         button_play2.setSkin(new MyButtonSkin(button_play2,0.5));
         button_task.setSkin(new MyButtonSkin(button_task,0.5));
 
-        button_exit.setOnAction(event->{
-            if(ExitFunc().compareTo("yes") == 0)
-                CloseWindow();
-        });
-
-        button_play_comp.setOnAction(event->{
-            OpenWindow();
-            setFlags(false, true);
-            CloseWindow();
-        });
-
-        button_play2.setOnAction(event->{
-            OpenWindow();
-            setFlags(true, false);
-            CloseWindow();
-        });
-
-        button_task.setOnAction(event->{
-            FXMLLoader fxmlLoader = new FXMLLoader(Task.class.getResource("/chess/fxmls/Task.fxml"));
+        button_rules.setOnAction(event->{
+            FXMLLoader fxmlLoader = new FXMLLoader(MainMenu.class.getResource("/chess/fxmls/Rules.fxml"));
             Parent root = null;
             try {
                 root = (Parent)fxmlLoader.load();
@@ -66,14 +53,55 @@ public class MainMenu {
             stage.show();
             CloseWindow();
         });
+
+        button_load.setOnAction(event->{
+            setFlags(false, false, true);
+            OpenWindow();
+            CloseWindow();
+        });
+
+        button_exit.setOnAction(event->{
+            if(ExitFunc().compareTo("yes") == 0)
+                CloseWindow();
+        });
+
+        button_play_comp.setOnAction(event->{
+            OpenWindow();
+            setFlags(false, true, false);
+            CloseWindow();
+        });
+
+        button_play2.setOnAction(event->{
+            OpenWindow();
+            setFlags(true, false, false);
+            CloseWindow();
+        });
+
+        button_task.setOnAction(event->{
+            FXMLLoader fxmlLoader = new FXMLLoader(Task.class.getResource("/chess/fxmls/Task.fxml"));
+            Parent root = null;
+            try {
+                root = (Parent) fxmlLoader.load();
+            } catch (IOException var4) {
+                var4.printStackTrace();
+            }
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root, 1440, 800));
+            stage.setResizable(false);
+            stage.getIcons().add(new Image("chess/images/black_figures/black_knight.png"));
+            stage.setOnCloseRequest(event1 -> {
+                stage.close();
+            });
+            stage.show();
+            CloseWindow();
+        });
     }
 
-    void OpenWindow()
-    {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainMenu.class.getResource("/chess/fxmls/GameFxmlLuba.fxml"));
+    void OpenWindow() {
+        FXMLLoader fxmlLoader = new FXMLLoader(Game.class.getResource("/chess/fxmls/GameFxmlLuba.fxml"));
         Parent root = null;
         try {
-            root = (Parent)fxmlLoader.load();
+            root = (Parent) fxmlLoader.load();
         } catch (IOException var4) {
             var4.printStackTrace();
         }
@@ -82,10 +110,11 @@ public class MainMenu {
         stage.setResizable(false);
         stage.getIcons().add(new Image("chess/images/black_figures/black_knight.png"));
         stage.setOnCloseRequest(event1 -> {
-                stage.close();
+            stage.close();
         });
         stage.show();
     }
+
     void CloseWindow()
     {
         ((Stage) button_exit.getScene().getWindow()).close();

@@ -5,7 +5,6 @@ import chess.cancel.CancelMove;
 import chess.figures.*;
 import chess.record.RecordMove;
 import chess.squares.Cell;
-import chess.controllers.MyButtonSkin;
 
 import static chess.controllers.ArrangePosition.ArrangePositionFunc;
 import static chess.controllers.ChangeBlackPawn.ChangeBlackPawn;
@@ -14,7 +13,6 @@ import static chess.controllers.Exit.ExitFunc;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,66 +20,58 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.skin.ButtonSkin;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.scene.effect.Bloom;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 
 public class Game{
 
     ForAllFigures figure_arrange;
 
-    /*public double Total = 0;
-    public Cell begin_minimax;
-    public Cell end_minimax;*/
-
     public static boolean flag_two_players;
     public static boolean flag_one_player;
+    public static boolean flag_load;
 
-    int letter_begin;//переменные нужные для определения куда тыкают мышкой чтобы выбирать фигуры и ходить
-    int number_begin;
-    Cell cell_begin;
-    int letter_end;
-    int number_end;
-    Cell cell_end;
+    static int letter_begin;//переменные нужные для определения куда тыкают мышкой чтобы выбирать фигуры и ходить
+    static int number_begin;
+    static Cell cell_begin;
+    static int letter_end;
+    static int number_end;
+    static Cell cell_end;
 
     static Cell cellforpawn;//клетка конца хода нужная для того, чтобы определять, нужно ли в классе пешки вызывать метод ForCapture удаляющий пешку, которую убили взятием на проходе, с доски
 
     public static FileChooser file_chooser = new FileChooser();//для сохранения и загрузки
 
     static FigureColor flag_move;//флаг отвечающий за то, чья очередь хода
-    boolean flag_cell;//флаг отвечающий за то, на каком этапе находится ход; если true - выбрали фигуру, если false - сделали(или не сделали) ход
-    boolean flag_attackking_move;//флаг отвечающий за то, был ли сделан ход или клетку конца выбрали неправильно
+    static boolean flag_cell;//флаг отвечающий за то, на каком этапе находится ход; если true - выбрали фигуру, если false - сделали(или не сделали) ход
+    static boolean flag_attackking_move;//флаг отвечающий за то, был ли сделан ход или клетку конца выбрали неправильно
     boolean flag_arrange;
 
-    CancelMove curr;//объект класса отвечающий за отмену одного полухода
-    ArrayCancelMove arrayCancelMove = new ArrayCancelMove();//список всех объектов таких как выше
+    static CancelMove curr;//объект класса отвечающий за отмену одного полухода
+    static ArrayCancelMove arrayCancelMove = new ArrayCancelMove();//список всех объектов таких как выше
 
-    ObservableList<RecordMove> record = FXCollections.observableArrayList();//для таблицы чтобы вечти запись ходов
+    static ObservableList<RecordMove> record = FXCollections.observableArrayList();//для таблицы чтобы вечти запись ходов
     static String record_move = "";//переменная для записи хода
     static int number_move;//счетчик количества ходов
 
     static ObservableList<ImageView> list = FXCollections.observableArrayList();//список из 64 ImageView
-    ObservableList<StackPane> List = FXCollections.observableArrayList();//список из 64 StackPane
+    static ObservableList<StackPane> List = FXCollections.observableArrayList();//список из 64 StackPane
 
-    ArrayList<Cell> possibleMovesThisFigure;//список возможных ходов фигуры после проверки на ограничения
+    static ArrayList<Cell> possibleMovesThisFigure;//список возможных ходов фигуры после проверки на ограничения
     static ArrayList<Cell> allPossibleMoves;//список возможных ходов всех фигур после проверки на ограничения
 
-    DropShadow ds = new DropShadow(50.0D, Color.rgb(120, 80, 43));//эффект тени для подсветки выбранной фигуры
+    static DropShadow ds = new DropShadow(50.0D, Color.rgb(120, 80, 43));//эффект тени для подсветки выбранной фигуры
 
     public static Image empty_figure = new Image("chess/images/empty_figure.png");
     static Image black_pawn = new Image("chess/images/black_figures/black_pawn.png");
@@ -367,8 +357,6 @@ public class Game{
     private TableColumn<RecordMove, String> table_column_black;
 
     @FXML
-    private Button load;
-    @FXML
     private Button save;
 
     @FXML
@@ -449,12 +437,17 @@ public class Game{
     };
 
     @FXML
-    void initialize() {
+    void initialize() throws IOException {
         CreateCollection();
         SetTableData();
         number_move = 0;
         flag_arrange = false;
         Basic();
+        if(flag_load) {
+            Zeros();
+            Stage primaryStage = new Stage();
+            loadFunction(file_chooser.showOpenDialog(primaryStage).getAbsolutePath());
+        }
 
         button_arrange.setSkin(new MyButtonSkin(button_arrange,0.5));
         button_menu.setSkin(new MyButtonSkin(button_menu,0.5));
@@ -470,48 +463,44 @@ public class Game{
         });
 
         button_new_game.setOnAction(event-> {
-
             NewGame();
-            //Print();
         });
 
         save.setOnAction(event -> {
-
             Save();
         });
 
         button_cancel_move.setOnAction(event -> {
-
             Cancel();
         });
 
         button_menu.setOnAction(event-> {
-
             ((Stage) button_menu.getScene().getWindow()).close();
             OpenMainMenuWindow();
         });
 
         button_arrange.setOnAction(event->{
-
-            for (Cell cell : Cell.values()) {
-                ForCapture(cell);
-                FindStackPane(cell).setStyle(FindStackPane(cell).getStyle() + "-fx-border-width: 0;");
-            }
-            while (number_move != 0)
-                tableView.getItems().remove(--number_move);
-            while(arrayCancelMove.getSize() != 0)
-                arrayCancelMove.DeleteArrayCancel();
-            record_move = "";
-            flag_arrange = true;
+            Zeros();
             Arrange();
         });
-
     }
 
+    public void Zeros() {
+        for (Cell cell : Cell.values()) {
+            ForCapture(cell);
+            FindStackPane(cell).setStyle(FindStackPane(cell).getStyle() + "-fx-border-width: 0;");
+        }
+        number_move = record.size();
+        while (number_move != 0)
+            record.remove(--number_move);
+        while(arrayCancelMove.getSize() != 0)
+            arrayCancelMove.DeleteArrayCancel();
+        record_move = "";
+        flag_arrange = false;
+    }
 
-
-    public void Arrange()
-    {
+    public void Arrange()  {
+        flag_arrange = true;
         while((figure_arrange = ArrangePositionFunc()).getName().compareTo("E") != 0)
         {
             GridPane.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -532,7 +521,6 @@ public class Game{
         }
         GridPane.setOnMouseClicked(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
-                int letter, number;
                 if (event.getClickCount() == 1) {
                     PlayingTwo(event.getX(), event.getY());
                 }
@@ -540,9 +528,10 @@ public class Game{
         });
     }
 
-    public static void setFlags(boolean flag_two, boolean flag_one)  {
+    public static void setFlags(boolean flag_two, boolean flag_one, boolean load)  {
         flag_two_players = flag_two;
         flag_one_player = flag_one;
+        flag_load = load;
     }
 
     public void CreateCollection() {
@@ -745,7 +734,7 @@ public class Game{
         }
     }
 
-    public void ArrangementGraphic() {
+    public static void ArrangementGraphic() {
         for (Cell curr_cell : Cell.values()) {
             for (ImageView curr_image : list) {
                 //если совпадает имя ячейки curr_cell и curr_image устанавливаем в curr_image картинку для фигуры которая стоит в curr_cell
@@ -760,7 +749,7 @@ public class Game{
         }
     }
 
-    public Image setWhite(ForAllFigures figure) {
+    public static Image setWhite(ForAllFigures figure) {
         //в завсисимости от имени фигуры возвращаем картинку для белых
         switch (figure.getName()) {
             case "P":
@@ -780,7 +769,7 @@ public class Game{
         }
     }
 
-    public Image setBlack(ForAllFigures figure) {
+    public static Image setBlack(ForAllFigures figure) {
         //в завсисимости от имени фигуры возвращаем картинку для черных
         switch (figure.getName()) {
             case "P":
@@ -803,7 +792,7 @@ public class Game{
     public void AllFunctions(Double ex, Double ey)//в зависимости от того, что тыкнет пользователь:
     // игру вдвоем, с компом и тд будут вызываться разные функции для GridPane
     {
-        if(flag_two_players)
+        if(flag_two_players || flag_load)
             PlayingTwo(ex, ey);
         else if(flag_one_player)
             PlayingOne(ex, ey);
@@ -1023,7 +1012,7 @@ public class Game{
 */
 
     //функция MoveLogicForPossibleMoves аналогичная MoveLogic, но сделанная для выделения только возможных ходов каждой фигуры
-    public void MoveLogicForPossibleMoves(Cell begin, Cell end)  {//функция аналогичная MoveLogic, но сделанная для выделения только возможных ходов каждой фигуры
+    public static void MoveLogicForPossibleMoves(Cell begin, Cell end)  {//функция аналогичная MoveLogic, но сделанная для выделения только возможных ходов каждой фигуры
         try {
             flag_attackking_move = false;
             for (Cell curr : begin.figure.PossibleMoves(begin)) {
@@ -1041,7 +1030,7 @@ public class Game{
         }
     }
     //функция CancelForPossibleMoves аналогичная MoveLogic, но сделанная для выделения только возможных ходов каждой фигуры
-    public void CancelForPossibleMoves() {
+    public static void CancelForPossibleMoves() {
         //если flag_cell равен true - если сейчас завершена попытка хода
         if (flag_cell) {
             curr = arrayCancelMove.getCancelMove(arrayCancelMove.getSize() - 1);//в объект типа CanceMove записываем последний элемент arrayCancelMove
@@ -1194,7 +1183,7 @@ public class Game{
         }
     }
 
-    public String LETTER(int index){//функция перевода числа в заглавную букву для StackPane
+    public static String LETTER(int index){//функция перевода числа в заглавную букву для StackPane
         switch (index)
         {
             case 1:
@@ -1237,7 +1226,7 @@ public class Game{
         }
     }
 
-    public void MoveGraphic(Cell begin, Cell end) {
+    public static void MoveGraphic(Cell begin, Cell end) {
         //переставляем картинки
         FindImageView(end).setImage(empty_figure);
         FindImageView(end).setImage(FindImageView(begin).getImage());
@@ -1252,7 +1241,7 @@ public class Game{
 
     }
 
-    public void ResetFigures(Cell begin, Cell end) {
+    public static void ResetFigures(Cell begin, Cell end) {
         //переставляем фигуры
         end.figure = begin.figure;
         begin.figure = new EmptyFigure("E");
@@ -1476,8 +1465,7 @@ public class Game{
         stage.show();
     }
 
-    void OpenDraw()
-    {
+    void OpenDraw() {
         FXMLLoader fxmlLoader = new FXMLLoader(Game.class.getResource("/chess/fxmls/Draw.fxml"));
         Parent root = null;
         try {
@@ -1519,15 +1507,14 @@ public class Game{
             record_move = tableView.getItems().get(number_move - 1).getBlack_move() + "-" + cell_end.figure.getName();
             ((RecordMove) record.get(number_move - 1)).setBlack_move(record_move);
         }
-
     }
 
-    public int ForNumberLetter(double num) {
+    public static int ForNumberLetter(double num) {
         //получаем значения номера буквы клетки
         return (int) (num / 90.0D + 1);
     }
 
-    public int ForNumberNumber(double num) {
+    public static int ForNumberNumber(double num) {
         //получаем значения номера клетки
         return (int) ((720 - num) / 90.0D + 1);
     }
@@ -1557,7 +1544,7 @@ public class Game{
         return image;
     }
 
-    public ArrayList<Cell> getPossibleMovesThisFigure(Cell begin){
+    public static ArrayList<Cell> getPossibleMovesThisFigure(Cell begin){
         possibleMovesThisFigure = new ArrayList<Cell>();//создаем новый список
         for (Cell cell : begin.figure.PossibleMoves(begin)) {//проходим по всем возможным ходам фигуры без ограничений
             cellforpawn = cell;
@@ -1569,7 +1556,7 @@ public class Game{
         return possibleMovesThisFigure;
     }
 
-    public StackPane FindStackPane(Cell cell) {
+    public static StackPane FindStackPane(Cell cell) {
         StackPane stackPane = new StackPane();
         //проходим по всему списку
         for (StackPane curr : List) {
@@ -1583,13 +1570,7 @@ public class Game{
     }
 
     public void NewGame() {
-        for (Cell cell : Cell.values())
-            ForCapture(cell);
-        while (number_move != 0)
-            tableView.getItems().remove(--number_move);
-        while(arrayCancelMove.getSize() != 0)
-            arrayCancelMove.DeleteArrayCancel();
-        record_move = "";
+        Zeros();
         Basic();
     }
 
@@ -1616,11 +1597,10 @@ public class Game{
         File save_file = new File(filename);
         PrintWriter printWriter = new PrintWriter(save_file);
         printWriter.println(SaveGamePositionInString());//записываем в файл позицию, номер хода, запись партии и чей ход
-        printWriter.println(number_move);
         printWriter.println(record_move);
+        printWriter.println(number_move);
         printWriter.print(flag_move.name());
         printWriter.close();
-        //flag_save = true;
     }
 
     public String SaveGamePositionInString() {
@@ -1638,6 +1618,114 @@ public class Game{
         }
 
         return str;
+    }
+
+    public void loadFunction(String fileName) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
+        String game_position = bufferedReader.readLine();
+        Arrangement(game_position);
+        RecordCollection(bufferedReader.readLine());
+        SetTableData();
+        number_move = Integer.parseInt(bufferedReader.readLine());
+        if (bufferedReader.readLine().compareTo("WHITE") == 0)
+            flag_move = FigureColor.WHITE;
+        else
+            flag_move = FigureColor.BLACK;
+
+        bufferedReader.close();
+    }
+
+    public void RecordCollection(String record_move) {
+        int flag = 1;
+
+        number_move = 0;
+        int i = 0;
+
+        for(int count = 0; i < record_move.length(); ++i) {
+            if (record_move.toCharArray()[i] == ' ' || record_move.toCharArray()[i] == '\n') {
+                char[] array = new char[i - count];
+                System.arraycopy(record_move.toCharArray(), count, array, 0, i - count);
+                String str = new String(array);
+                if (flag == 1) {
+                    ++number_move;
+                    record.add(number_move - 1, new RecordMove());
+                    ((RecordMove) record.get(number_move - 1)).setNumber_move(number_move);
+                    ++flag;
+                } else if (flag == 2) {
+                    ((RecordMove) record.get(number_move - 1)).setWhite_move(str);
+                    ++flag;
+                } else {
+                    ((RecordMove) record.get(number_move - 1)).setBlack_move(str);
+                    flag = 1;
+                }
+                count = i + 1;
+            }
+        }
+    }
+
+    public void Arrangement(String game_position){
+        char[] arr_cell = new char[2];
+        int i = 0;
+
+        for(int count = 0; i < game_position.length(); ++i) {
+            if (game_position.toCharArray()[i] == ' ' || game_position.toCharArray()[i] == '\n') {
+                char[] array = new char[i - count];
+                System.arraycopy(game_position.toCharArray(), count, array, 0, i - count);
+                arr_cell[1] = array[array.length - 1];
+                arr_cell[0] = array[array.length - 2];
+                String str_cell = new String(arr_cell);
+                char[] arr_figure = new char[array.length - arr_cell.length];
+                System.arraycopy(array, 0, arr_figure, 0, arr_figure.length);
+                String str_figure = new String(arr_figure);
+
+                Cell[] arr = Cell.values();
+                int size = arr.length;
+
+                for(int j = 0; j < size; j++) {
+                    Cell curr = arr[j];
+                    if (curr.name().compareTo(str_cell) == 0) {
+                        curr.figure = FactoryFigure(str_figure);
+                        curr.isOccupied = true;
+                        break;
+                    }
+                }
+
+                count = i + 1;
+            }
+        }
+        ArrangementGraphic();
+    }
+
+    public ForAllFigures FactoryFigure(String str) {
+        switch(str)
+        {
+            case "WP":
+                return new Pawn("P", FigureColor.WHITE);
+            case "BP":
+                return new Pawn("P", FigureColor.BLACK);
+            case "WB":
+                return new Bishop("B", FigureColor.WHITE);
+            case "BB":
+                return new Bishop("B", FigureColor.BLACK);
+            case "WN":
+                return new Knight("N", FigureColor.WHITE);
+            case "BN":
+                return new Knight("N", FigureColor.BLACK);
+            case "WK":
+                return new King("K", FigureColor.WHITE);
+            case "BK":
+                return new King("K", FigureColor.BLACK);
+            case "WQ":
+                return new Queen("Q", FigureColor.WHITE);
+            case "BQ":
+                return new Queen("Q", FigureColor.BLACK);
+            case "WR":
+                return new Rook("R", FigureColor.WHITE);
+            case "BR":
+                return new Rook("R", FigureColor.BLACK);
+            default:
+                return new EmptyFigure("E");
+        }
     }
 
     public void Cancel() {

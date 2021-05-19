@@ -10,6 +10,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static chess.controllers.GameTask.ConditionTask;
+
 public class Task {
     @FXML
     private Button button_play1;
@@ -33,7 +35,6 @@ public class Task {
     private Button button_play10;
     @FXML
     private Button button_menu;
-
     @FXML
     void initialize()
     {
@@ -50,13 +51,67 @@ public class Task {
         button_menu.setSkin(new MyButtonSkin(button_menu,0.5));
 
         button_play1.setOnAction(event->{
+            ConditionTask(1);
             OpenWindow();
             CloseWindow();
         });
 
         button_play2.setOnAction(event->{
+            ConditionTask(2);
             OpenWindow();
             CloseWindow();
+        });
+
+        button_play3.setOnAction(event->{
+            ConditionTask(3);
+            OpenWindow();
+            CloseWindow();
+        });
+
+        button_play4.setOnAction(event->{
+            ConditionTask(4);
+            OpenWindow();
+            CloseWindow();
+        });
+
+        button_play5.setOnAction(event->{
+            ConditionTask(5);
+            OpenWindow();
+            CloseWindow();
+        });
+
+        button_play6.setOnAction(event->{
+            ConditionTask(6);
+            OpenWindow();
+            CloseWindow();
+        });
+
+        button_play7.setOnAction(event->{
+            ConditionTask(7);
+            OpenWindow();
+            CloseWindow();
+        });
+
+        button_play8.setOnAction(event->{
+            ConditionTask(8);
+            OpenWindow();
+            CloseWindow();
+        });
+
+        button_play9.setOnAction(event->{
+            ConditionTask(9);
+            OpenWindow();
+            CloseWindow();
+        });
+
+        button_play10.setOnAction(event->{
+            ConditionTask(10);
+            OpenWindow();
+            CloseWindow();
+        });
+
+        button_menu.setOnAction(event->{
+
         });
     }
 
@@ -78,6 +133,7 @@ public class Task {
         });
         stage.show();
     }
+
     void CloseWindow()
     {
         ((Stage) button_play1.getScene().getWindow()).close();
