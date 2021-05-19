@@ -26,6 +26,11 @@ public class MainMenu {
 
     @FXML
     void initialize() {
+        button_exit.setSkin(new MyButtonSkin(button_exit, 0.5));
+        button_play_comp.setSkin(new MyButtonSkin(button_play_comp,0.5));
+        button_play2.setSkin(new MyButtonSkin(button_play2,0.5));
+        button_task.setSkin(new MyButtonSkin(button_task,0.5));
+
         button_exit.setOnAction(event->{
             if(ExitFunc().compareTo("yes") == 0)
                 CloseWindow();

@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0" style="-fx-background-color: #6F6363;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chess.controllers.Task">
     <children>
-        <Text fill="WHITE" layoutX="617.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Задачи">
+        <Text fill="WHITE" layoutX="617.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Задачи">
             <font>
                 <Font name="System Bold" size="58.0" />
             </font>
@@ -155,5 +155,10 @@
                 </Button>
             </children>
         </StackPane>
+      <Button fx:id="button_menu" alignment="CENTER" contentDisplay="TOP" layoutX="81.0" layoutY="42.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="125.0" style="-fx-background-color: #857676; -fx-background-radius: 12;" text="Меню" textFill="WHITE">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

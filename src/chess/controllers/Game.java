@@ -5,6 +5,7 @@ import chess.cancel.CancelMove;
 import chess.figures.*;
 import chess.record.RecordMove;
 import chess.squares.Cell;
+import chess.controllers.MyButtonSkin;
 
 import static chess.controllers.ArrangePosition.ArrangePositionFunc;
 import static chess.controllers.ChangeBlackPawn.ChangeBlackPawn;
@@ -21,6 +22,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.skin.ButtonSkin;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -32,6 +34,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.scene.effect.Bloom;
 
 import java.io.File;
 import java.io.IOException;
@@ -453,6 +456,12 @@ public class Game{
         flag_arrange = false;
         Basic();
 
+        button_arrange.setSkin(new MyButtonSkin(button_arrange,0.5));
+        button_menu.setSkin(new MyButtonSkin(button_menu,0.5));
+        button_new_game.setSkin(new MyButtonSkin(button_new_game,0.5));
+        button_cancel_move.setSkin(new MyButtonSkin(button_cancel_move,0.5));
+        save.setSkin(new MyButtonSkin(save,0.5));
+
         GridPane.setOnMouseClicked(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
                 if (event.getClickCount() == 1)
@@ -461,24 +470,29 @@ public class Game{
         });
 
         button_new_game.setOnAction(event-> {
+
             NewGame();
             //Print();
         });
 
         save.setOnAction(event -> {
+
             Save();
         });
 
         button_cancel_move.setOnAction(event -> {
+
             Cancel();
         });
 
         button_menu.setOnAction(event-> {
+
             ((Stage) button_menu.getScene().getWindow()).close();
             OpenMainMenuWindow();
         });
 
         button_arrange.setOnAction(event->{
+
             for (Cell cell : Cell.values()) {
                 ForCapture(cell);
                 FindStackPane(cell).setStyle(FindStackPane(cell).getStyle() + "-fx-border-width: 0;");
@@ -491,7 +505,10 @@ public class Game{
             flag_arrange = true;
             Arrange();
         });
+
     }
+
+
 
     public void Arrange()
     {

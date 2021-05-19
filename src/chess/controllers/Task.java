@@ -31,10 +31,24 @@ public class Task {
     private Button button_play9;
     @FXML
     private Button button_play10;
+    @FXML
+    private Button button_menu;
 
     @FXML
     void initialize()
     {
+        button_play1.setSkin(new MyButtonSkin(button_play1, 0.9));
+        button_play2.setSkin(new MyButtonSkin(button_play2,0.9));
+        button_play3.setSkin(new MyButtonSkin(button_play3, 0.9));
+        button_play4.setSkin(new MyButtonSkin(button_play4,0.9));
+        button_play5.setSkin(new MyButtonSkin(button_play5,0.9));
+        button_play6.setSkin(new MyButtonSkin(button_play6,0.9));
+        button_play7.setSkin(new MyButtonSkin(button_play7,0.9));
+        button_play8.setSkin(new MyButtonSkin(button_play8,0.9));
+        button_play9.setSkin(new MyButtonSkin(button_play9,0.9));
+        button_play10.setSkin(new MyButtonSkin(button_play10,0.9));
+        button_menu.setSkin(new MyButtonSkin(button_menu,0.5));
+
         button_play1.setOnAction(event->{
             OpenWindow();
             CloseWindow();

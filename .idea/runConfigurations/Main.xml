@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Main" type="Application" factoryName="Application" activateToolWindowBeforeRun="false">
+    <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Program Files/Java/jdk-16.0.1" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <option name="MAIN_CLASS_NAME" value="Main" />
+    <module name="Chess" />
+    <option name="VM_PARAMETERS" value="--module-path &quot;E:\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
