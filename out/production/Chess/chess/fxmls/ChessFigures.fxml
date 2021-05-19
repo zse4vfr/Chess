@@ -6,7 +6,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0" style="-fx-background-color: #6F6363;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text fill="WHITE" layoutX="538.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Шахамтные фигуры">
+      <Text fill="WHITE" layoutX="538.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Шахматные фигуры">
          <font>
             <Font size="48.0" />
          </font>

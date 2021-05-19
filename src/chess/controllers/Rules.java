@@ -42,7 +42,7 @@ public class Rules {
             Open(fxmlLoader);
         });
 
-        button_figures.setOnAction(event->{
+        button_other_rules.setOnAction(event->{
             FXMLLoader fxmlLoader = new FXMLLoader(Rules.class.getResource("/chess/fxmls/ChessFigures.fxml"));
             Open(fxmlLoader);
         });

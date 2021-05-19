@@ -53,71 +53,68 @@ public class Task {
         button_play1.setOnAction(event->{
             ConditionTask(1);
             OpenWindow();
-            CloseWindow();
         });
 
         button_play2.setOnAction(event->{
             ConditionTask(2);
             OpenWindow();
-            CloseWindow();
         });
 
         button_play3.setOnAction(event->{
             ConditionTask(3);
             OpenWindow();
-            CloseWindow();
         });
 
         button_play4.setOnAction(event->{
             ConditionTask(4);
             OpenWindow();
-            CloseWindow();
         });
 
         button_play5.setOnAction(event->{
             ConditionTask(5);
             OpenWindow();
-            CloseWindow();
         });
 
         button_play6.setOnAction(event->{
             ConditionTask(6);
             OpenWindow();
-            CloseWindow();
         });
 
         button_play7.setOnAction(event->{
             ConditionTask(7);
             OpenWindow();
-            CloseWindow();
         });
 
         button_play8.setOnAction(event->{
             ConditionTask(8);
             OpenWindow();
-            CloseWindow();
         });
 
         button_play9.setOnAction(event->{
             ConditionTask(9);
             OpenWindow();
-            CloseWindow();
         });
 
         button_play10.setOnAction(event->{
             ConditionTask(10);
             OpenWindow();
-            CloseWindow();
         });
 
         button_menu.setOnAction(event->{
-
+            FXMLLoader fxmlLoader = new FXMLLoader(GameTask.class.getResource("/chess/fxmls/MainMenu.fxml"));
+            Open(fxmlLoader);
         });
     }
 
     void OpenWindow()
     {
         FXMLLoader fxmlLoader = new FXMLLoader(GameTask.class.getResource("/chess/fxmls/GameFxmlLubaTasks.fxml"));
+        Open(fxmlLoader);
+    }
+
+    void Open(FXMLLoader fxmlLoader)
+    {
+        CloseWindow();
         Parent root = null;
         try {
             root = (Parent)fxmlLoader.load();
@@ -133,7 +130,6 @@ public class Task {
         });
         stage.show();
     }
-
     void CloseWindow()
     {
         ((Stage) button_play1.getScene().getWindow()).close();

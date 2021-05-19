@@ -37,20 +37,7 @@ public class MainMenu {
 
         button_rules.setOnAction(event->{
             FXMLLoader fxmlLoader = new FXMLLoader(MainMenu.class.getResource("/chess/fxmls/Rules.fxml"));
-            Parent root = null;
-            try {
-                root = (Parent)fxmlLoader.load();
-            } catch (IOException var4) {
-                var4.printStackTrace();
-            }
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root, 1440, 800));
-            stage.setResizable(false);
-            stage.getIcons().add(new Image("chess/images/black_figures/black_knight.png"));
-            stage.setOnCloseRequest(event1 -> {
-                stage.close();
-            });
-            stage.show();
+            Open(fxmlLoader);
             CloseWindow();
         });
 
@@ -79,29 +66,21 @@ public class MainMenu {
 
         button_task.setOnAction(event->{
             FXMLLoader fxmlLoader = new FXMLLoader(Task.class.getResource("/chess/fxmls/Task.fxml"));
-            Parent root = null;
-            try {
-                root = (Parent) fxmlLoader.load();
-            } catch (IOException var4) {
-                var4.printStackTrace();
-            }
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root, 1440, 800));
-            stage.setResizable(false);
-            stage.getIcons().add(new Image("chess/images/black_figures/black_knight.png"));
-            stage.setOnCloseRequest(event1 -> {
-                stage.close();
-            });
-            stage.show();
+            Open(fxmlLoader);
             CloseWindow();
         });
     }
 
     void OpenWindow() {
         FXMLLoader fxmlLoader = new FXMLLoader(Game.class.getResource("/chess/fxmls/GameFxmlLuba.fxml"));
+        Open(fxmlLoader);
+    }
+
+    void Open(FXMLLoader fxmlLoader)
+    {
         Parent root = null;
         try {
-            root = (Parent) fxmlLoader.load();
+            root = (Parent)fxmlLoader.load();
         } catch (IOException var4) {
             var4.printStackTrace();
         }

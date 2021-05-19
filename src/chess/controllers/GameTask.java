@@ -361,20 +361,7 @@ public class GameTask {
 
         button_task.setOnAction(event->{
             FXMLLoader fxmlLoader = new FXMLLoader(Task.class.getResource("/chess/fxmls/Task.fxml"));
-            Parent root = null;
-            try {
-                root = (Parent)fxmlLoader.load();
-            } catch (IOException var4) {
-                var4.printStackTrace();
-            }
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root, 1440, 800));
-            stage.setResizable(false);
-            stage.getIcons().add(new Image("chess/images/black_figures/black_knight.png"));
-            stage.setOnCloseRequest(event1 -> {
-                stage.close();
-            });
-            stage.show();
+            Open(fxmlLoader);
             CloseWindow();
         });
     }
@@ -511,11 +498,11 @@ public class GameTask {
                     random1 = (int) a;
 
                     if (random1 == 0) {
-                        ResetFigures(Cell.e1, Cell.g3);
-                        MoveGraphic(Cell.e1, Cell.g3);
+                        ResetFigures(Cell.f1, Cell.g3);
+                        MoveGraphic(Cell.f1, Cell.g3);
                     } else if (random1 == 1) {
-                        ResetFigures(Cell.e1, Cell.c3);
-                        MoveGraphic(Cell.e1, Cell.c3);
+                        ResetFigures(Cell.f1, Cell.d3);
+                        MoveGraphic(Cell.f1, Cell.d3);
                     }
                 }
                 else if(number_of_move == 2 && random1 == 0 && cell_begin.figure.getName().compareTo("B") == 0 && cell_end.name().compareTo("g5") == 0) {
@@ -542,7 +529,7 @@ public class GameTask {
                     OpenIncorrectMoveWindow();
 
                 flag_cell = true;
-//снимаем выделение клеток возможных ходов фигуры
+                //снимаем выделение клеток возможных ходов фигуры
                 for(Cell cell : possibleMovesThisFigure)
                     FindStackPane(cell).setStyle(FindStackPane(cell).getStyle() + "-fx-border-width: 0;");
                 break;
@@ -727,8 +714,8 @@ public class GameTask {
     }
 
     public void MoveLogic(Cell begin, Cell end) {
-        /*if (begin.figure.getName().compareTo("P") == 0)
-            begin.figure.PossibleMoves(begin);*/
+        if (begin.figure.getName().compareTo("P") == 0)
+            begin.figure.PossibleMoves(begin);
         for (Cell curr : possibleMovesThisFigure) {
             if (end == curr) {//если клетка конца равна какому-то элементу из списка возможных ходов фигуры
                 ResetFigures(begin, end);
@@ -1160,46 +1147,21 @@ public class GameTask {
 
     void OpenWinWindow(){
         FXMLLoader fxmlLoader = new FXMLLoader(GameTask.class.getResource("/chess/fxmls/CompleteTask.fxml"));
-        Parent root = null;
-        try {
-            root = (Parent)fxmlLoader.load();
-        } catch (IOException var4) {
-            var4.printStackTrace();
-        }
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root, 240, 150));
-        stage.setResizable(false);
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.getIcons().add(new Image("chess/images/black_figures/black_knight.png"));
-        stage.setOnCloseRequest(event1 -> {
-            CloseWindow();
-            OpenWindowTasks();
-            stage.close();
-        });
-        stage.showAndWait();
+        OpenAndWait(fxmlLoader, true);
     }
 
     void OpenIncorrectMoveWindow(){
         FXMLLoader fxmlLoader = new FXMLLoader(GameTask.class.getResource("/chess/fxmls/Wrong.fxml"));
-        Parent root = null;
-        try {
-            root = (Parent)fxmlLoader.load();
-        } catch (IOException var4) {
-            var4.printStackTrace();
-        }
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root, 240, 150));
-        stage.setResizable(false);
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.getIcons().add(new Image("chess/images/black_figures/black_knight.png"));
-        stage.setOnCloseRequest(event1 -> {
-            stage.close();
-        });
-        stage.showAndWait();
+        OpenAndWait(fxmlLoader, false);
     }
 
     void OpenWindowTasks() {
         FXMLLoader fxmlLoader = new FXMLLoader(GameTask.class.getResource("/chess/fxmls/Task.fxml"));
+        Open(fxmlLoader);
+    }
+
+    void Open(FXMLLoader fxmlLoader)
+    {
         Parent root = null;
         try {
             root = (Parent) fxmlLoader.load();
@@ -1214,5 +1176,27 @@ public class GameTask {
             stage.close();
         });
         stage.show();
+    }
+
+    void OpenAndWait(FXMLLoader fxmlLoader, boolean flag){
+        Parent root = null;
+        try {
+            root = (Parent)fxmlLoader.load();
+        } catch (IOException var4) {
+            var4.printStackTrace();
+        }
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root, 240, 150));
+        stage.setResizable(false);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.getIcons().add(new Image("chess/images/black_figures/black_knight.png"));
+        stage.setOnCloseRequest(event1 -> {
+            if(flag) {
+                CloseWindow();
+                OpenWindowTasks();
+            }
+            stage.close();
+        });
+        stage.showAndWait();
     }
 }

@@ -669,6 +669,9 @@ public class Game{
 
     public void SetTableData() {
         //устанавливаем значения откуда будут браться данные для таблицы
+        number_move = record.size();
+        while(number_move != 0)
+            record.remove(--number_move);
         table_column_number.setCellValueFactory(new PropertyValueFactory("number_move"));
         table_column_white.setCellValueFactory(new PropertyValueFactory("white_move"));
         table_column_black.setCellValueFactory(new PropertyValueFactory("black_move"));
@@ -1423,8 +1426,8 @@ public class Game{
         stage.showAndWait();
     }
 
-    public void OpenWindowWhiteWin() {
-        FXMLLoader fxmlLoader = new FXMLLoader(Game.class.getResource("/chess/fxmls/WhiteWin.fxml"));
+
+    void OpenWin(FXMLLoader fxmlLoader){
         Parent root = null;
         try {
             root = (Parent) fxmlLoader.load();
@@ -1442,48 +1445,20 @@ public class Game{
             OpenMainMenuWindow();
         });
         stage.show();
+    }
+    public void OpenWindowWhiteWin() {
+        FXMLLoader fxmlLoader = new FXMLLoader(Game.class.getResource("/chess/fxmls/WhiteWin.fxml"));
+        OpenWin(fxmlLoader);
     }
 
     public void OpenWindowBlackWin(){
         FXMLLoader fxmlLoader = new FXMLLoader(Game.class.getResource("/chess/fxmls/BlackWin.fxml"));
-        Parent root = null;
-        try {
-            root = (Parent) fxmlLoader.load();
-        } catch (IOException var4) {
-            var4.printStackTrace();
-        }
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root, 240, 150));
-        stage.setResizable(false);
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.getIcons().add(new Image("chess/images/black_figures/black_knight.png"));
-        stage.setOnCloseRequest(event1 -> {
-            stage.close();
-            ((Stage)button_new_game.getScene().getWindow()).close();
-            OpenMainMenuWindow();
-        });
-        stage.show();
+        OpenWin(fxmlLoader);
     }
 
     void OpenDraw() {
         FXMLLoader fxmlLoader = new FXMLLoader(Game.class.getResource("/chess/fxmls/Draw.fxml"));
-        Parent root = null;
-        try {
-            root = (Parent) fxmlLoader.load();
-        } catch (IOException var4) {
-            var4.printStackTrace();
-        }
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root, 240, 150));
-        stage.setResizable(false);
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.getIcons().add(new Image("chess/images/black_figures/black_knight.png"));
-        stage.setOnCloseRequest(event1 -> {
-            stage.close();
-            ((Stage)button_new_game.getScene().getWindow()).close();
-            OpenMainMenuWindow();
-        });
-        stage.show();
+        OpenWin(fxmlLoader);
     }
 
     public void MagicPawn() {
