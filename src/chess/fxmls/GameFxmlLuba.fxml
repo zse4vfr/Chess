@@ -16,7 +16,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0" style="-fx-background-color: #6F6363;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chess.controllers.Game">
    <children>
-      <Button fx:id="button_delete" layoutX="18.0" layoutY="714.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" styleClass="context-menu" stylesheets="@Row.css" text="Удалить" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+      <Button fx:id="button_delete" layoutX="18.0" layoutY="726.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" styleClass="context-menu" stylesheets="@Row.css" text="Удалить" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
          <font>
             <Font size="24.0" />
          </font>
