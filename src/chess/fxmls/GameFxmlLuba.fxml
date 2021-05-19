@@ -521,9 +521,9 @@
       </GridPane>
       <TableView fx:id="tableView" cache="true" depthTest="DISABLE" editable="true" fixedCellSize="0.0" layoutX="995.0" layoutY="49.0" minHeight="704.5" minWidth="410.0" mouseTransparent="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #D1B3B3; -fx-border-color: #D1B3B3; -fx-background-radius: 8px; -fx-border-radius: 10px;" stylesheets="@Row.css">
          <columns>
-            <TableColumn fx:id="table_column_white" minWidth="20.0" prefWidth="176.3333740234375" style="-fx-background-color: #D1B3B3; -fx-font-size: 20; -fx-alignment: center;" text="Белые" />
+            <TableColumn fx:id="table_column_white" minWidth="20.0" prefWidth="176.3333740234375" style="-fx-background-color: #D1B3B3; -fx-font-size: 15; -fx-alignment: center;" text="Белые" />
             <TableColumn fx:id="table_column_number" minWidth="0.0" prefWidth="20.0" style="-fx-background-color: #D1B3B3; -fx-alignment: center;" text="№" />
-            <TableColumn fx:id="table_column_black" minWidth="20.0" prefWidth="75.0" style="-fx-background-color: #D1B3B3; -fx-font-size: 20; -fx-alignment: center;" text="Черные" />
+            <TableColumn fx:id="table_column_black" minWidth="20.0" prefWidth="75.0" style="-fx-background-color: #D1B3B3; -fx-font-size: 15; -fx-alignment: center;" text="Черные" />
          </columns>
          <opaqueInsets>
             <Insets />

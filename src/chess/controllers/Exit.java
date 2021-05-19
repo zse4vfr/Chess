@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
@@ -31,6 +32,7 @@ public class Exit {
             str = "no";
             ((Stage) button_no.getScene().getWindow()).close();
         });
+
     }
 
     public static String ExitFunc() {
@@ -47,7 +49,7 @@ public class Exit {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.getIcons().add(new Image("chess/images/black_figures/black_knight.png"));
         stage.setOnCloseRequest(event1 -> {
-            stage.showAndWait();
+            stage.close();
         });
         stage.showAndWait();
         return str;

@@ -677,7 +677,7 @@ public class Game{
         table_column_black.setCellValueFactory(new PropertyValueFactory("black_move"));
         tableView.setItems(record);
         tableView.setEditable(true);
-       
+
     }
 
     public void Basic() {

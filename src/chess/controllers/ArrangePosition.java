@@ -51,6 +51,8 @@ public class ArrangePosition {
 
     @FXML
     void initialize() {
+
+        button_OK.setSkin(new MyButtonSkin(button_OK,0.5));
         white_king.setOnMouseClicked(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
                 if (event.getClickCount() == 1) {

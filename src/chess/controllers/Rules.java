@@ -25,8 +25,22 @@ public class Rules {
     private Button button_other_rules;
 
     @FXML
+    private Button button_menu;
+
+    @FXML
     void initialize()
     {
+        button_board.setSkin(new MyButtonSkin(button_board,0.9));
+        button_movement.setSkin(new MyButtonSkin(button_movement,0.9));
+        button_other_rules.setSkin(new MyButtonSkin(button_other_rules,0.7));
+        button_figures.setSkin(new MyButtonSkin(button_figures,0.7));
+        button_menu.setSkin(new MyButtonSkin(button_menu,0.5));
+
+        button_menu.setOnAction(event->{
+            FXMLLoader fxmlLoader = new FXMLLoader(GameTask.class.getResource("/chess/fxmls/MainMenu.fxml"));
+            Open(fxmlLoader);
+        });
+
         button_board.setOnAction(event->{
             FXMLLoader fxmlLoader = new FXMLLoader(Rules.class.getResource("/chess/fxmls/ChessBoard.fxml"));
             Open(fxmlLoader);

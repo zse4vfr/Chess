@@ -312,6 +312,9 @@ public class GameTask {
         flag_move = FigureColor.WHITE;
         flag_cell = true;
 
+        button_task.setSkin(new MyButtonSkin(button_task,0.5));
+        button_menu.setSkin(new MyButtonSkin(button_menu,0.5));
+
         GridPane.setOnMouseClicked(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
                 if (event.getClickCount() == 1) {
@@ -866,7 +869,7 @@ public class GameTask {
                 ArrangementLogic1();
                 ArrangementGraphic();
                 label_number_task.setText("Задача 1");
-                label_txt.setText("В данной позиции преимущество белых очевидно.\n Осталось лишь найти комбинацию, ведущую к быстрой победе.\n\n Ход белых. Мат в 2 хода.");
+                label_txt.setText("В данной позиции преимущество белых очевидно.\nОсталось лишь найти комбинацию, ведущую к\nбыстрой победе.\n\n Ход белых. Мат в 2 хода.");
                 break;
             case 2 :
                 ArrangementLogic2();
@@ -878,25 +881,25 @@ public class GameTask {
                 ArrangementLogic3();
                 ArrangementGraphic();
                 label_number_task.setText("Задача 3");
-                label_txt.setText("На доске возникла позиция из глубокого эндшпиля.\nНесмотря на небольшое количсество материала,\n белые проводят атаку на короля соперника.\n\nХод белых. Мат в 3 хода.");
+                label_txt.setText("На доске возникла позиция из глубокого эндшпиля.\nНесмотря на небольшое количсество материала,\nбелые проводят атаку на короля соперника.\n\nХод белых. Мат в 3 хода.");
                 break;
             case 4 :
                 ArrangementLogic4();
                 ArrangementGraphic();
                 label_number_task.setText("Задача 4");
-                label_txt.setText("У черных большое материальное преимущество,\nно ход в данной позиции принадлежит белым,\n и они проводят форсированную атаку.\n\nХод белых. Мат в 2 хода.");
+                label_txt.setText("У черных большое материальное преимущество,\nно ход в данной позиции принадлежит белым,\nи они проводят форсированную атаку.\n\nХод белых. Мат в 2 хода.");
                 break;
             case 5 :
                 ArrangementLogic5();
                 ArrangementGraphic();
                 label_number_task.setText("Задача 5");
-                label_txt.setText("В данном эндшпиле, который на первый взгляд\nможет показаться равным, белые побеждают,\nблагодаря неожиданной и очень изящной комбинации.\n\nХод белых. Мат в 4 хода.");
+                label_txt.setText("В данном эндшпиле, который на первый взгляд\nможет показаться равным, белые побеждают,\nблагодаря неожиданной и очень изящной\nкомбинации.\n\nХод белых. Мат в 4 хода.");
                 break;
             case 6 :
                 ArrangementLogic6();
                 ArrangementGraphic();
                 label_number_task.setText("Задача 6");
-                label_txt.setText("Рашид Нежметдинов был представителем яркого\nатакующего стиля игры. В данной позиции ониспользовал\nактивность своих фигур и добился быстрой победы.\n\nХод белых. Мат в 2 хода.");
+                label_txt.setText("Рашид Нежметдинов был представителем яркого\nатакующего стиля игры. В данной позиции он\nиспользовал активность своих фигур\nи добился быстрой победы.\n\nХод белых. Мат в 2 хода.");
                 break;
             case 7 :
                 ArrangementLogic7();
@@ -908,19 +911,19 @@ public class GameTask {
                 ArrangementLogic8();
                 ArrangementGraphic();
                 label_number_task.setText("Задача 8");
-                label_txt.setText("Черные создали угрозу мата в один ход, но при этом\nупустили из виду нехитрую тактическую ловушку соперника.\n\nХод белых. Мат в 3 хода.");
+                label_txt.setText("Черные создали угрозу мата в один ход, но при этом\nупустили из виду нехитрую тактическую ловушку\nсоперника.\n\nХод белых. Мат в 3 хода.");
                 break;
             case 9 :
                 ArrangementLogic9();
                 ArrangementGraphic();
                 label_number_task.setText("Задача 9");
-                label_txt.setText("В данном эндшпиле у черных материальный перевес, но\nих король находится в крайне плохой позиции.\nИспользуя это обстоятельство,белые находят\nэффектный путь к победе.\n\nХод белых. Выигрыш.");
+                label_txt.setText("В данном эндшпиле у черных материальный перевес,\nно их король находится в крайне плохой позиции.\nИспользуя это обстоятельство,белые находят\nэффектный путь к победе.\n\nХод белых. Выигрыш.");
                 break;
             case 10 :
                 ArrangementLogic10();
                 ArrangementGraphic();
                 label_number_task.setText("Задача 10");
-                label_txt.setText("На первый взгляд кажется, что у белых нет никакого шанса\nспастись от поражения. Но в их распоряжении имеется\nфорсированная комбинация, которая меняет исход партии.\n\nХод белых. Мат в 3 хода.");
+                label_txt.setText("На первый взгляд кажется, что у белых нет никакого\nшанса спастись от поражения. Но в их распоряжении\nимеется форсированная комбинация, которая меняет\nисход партии.\n\nХод белых. Мат в 3 хода.");
                 break;
             default:
                 break;
