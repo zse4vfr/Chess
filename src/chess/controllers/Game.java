@@ -676,6 +676,8 @@ public class Game{
         table_column_white.setCellValueFactory(new PropertyValueFactory("white_move"));
         table_column_black.setCellValueFactory(new PropertyValueFactory("black_move"));
         tableView.setItems(record);
+        tableView.setEditable(true);
+       
     }
 
     public void Basic() {
@@ -1183,6 +1185,7 @@ public class Game{
         } else {
             ((RecordMove) record.get(number_move - 1)).setBlack_move(record_move);
             tableView.refresh();
+            tableView.scrollTo(record.get(number_move - 1));
         }
     }
 

@@ -34,6 +34,8 @@ public class MainMenu {
         button_play_comp.setSkin(new MyButtonSkin(button_play_comp,0.5));
         button_play2.setSkin(new MyButtonSkin(button_play2,0.5));
         button_task.setSkin(new MyButtonSkin(button_task,0.5));
+        button_rules.setSkin(new MyButtonSkin(button_rules,0.5));
+        button_load.setSkin(new MyButtonSkin(button_load,0.5));
 
         button_rules.setOnAction(event->{
             FXMLLoader fxmlLoader = new FXMLLoader(MainMenu.class.getResource("/chess/fxmls/Rules.fxml"));
