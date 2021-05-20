@@ -497,7 +497,7 @@
                 </StackPane>
             </children>
         </GridPane>
-      <Pane layoutX="926.0" layoutY="219.0" prefHeight="306.0" prefWidth="447.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;">
+      <Pane layoutX="926.0" layoutY="219.0" prefHeight="306.0" prefWidth="447.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" styleClass="context-menu" stylesheets="@Row.css">
          <children>
             <Label fx:id="label_number_task" layoutX="186.0" layoutY="27.0" textFill="WHITE">
                <font>

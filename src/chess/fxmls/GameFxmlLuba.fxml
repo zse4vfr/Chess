@@ -16,7 +16,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0" style="-fx-background-color: #6F6363;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chess.controllers.Game">
    <children>
-      <Button fx:id="button_delete" layoutX="18.0" layoutY="726.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" styleClass="context-menu" stylesheets="@Row.css" text="Удалить" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+      <Button fx:id="button_delete" layoutX="18.0" layoutY="728.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" styleClass="context-menu" stylesheets="@Row.css" text="Удалить" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
          <font>
             <Font size="24.0" />
          </font>
@@ -41,7 +41,7 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button_arrange" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="651.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" styleClass="context-menu" stylesheets="@Row.css" text="Расставить позиции" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+      <Button fx:id="button_arrange" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="653.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" styleClass="context-menu" stylesheets="@Row.css" text="Расставить позиции" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
          <font>
             <Font size="16.0" />
          </font>
@@ -519,7 +519,7 @@
             </StackPane>
          </children>
       </GridPane>
-      <TableView fx:id="tableView" cache="true" depthTest="DISABLE" editable="true" fixedCellSize="0.0" layoutX="995.0" layoutY="49.0" minHeight="704.5" minWidth="410.0" mouseTransparent="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #D1B3B3; -fx-border-color: #D1B3B3; -fx-background-radius: 8px; -fx-border-radius: 10px;" stylesheets="@Row.css">
+      <TableView fx:id="tableView" cache="true" depthTest="DISABLE" editable="true" fixedCellSize="0.0" layoutX="995.0" layoutY="49.0" minHeight="705.0" minWidth="410.0" mouseTransparent="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #D1B3B3; -fx-border-color: #D1B3B3; -fx-background-radius: 8px; -fx-border-radius: 10px;" stylesheets="@Row.css">
          <columns>
             <TableColumn fx:id="table_column_white" minWidth="20.0" prefWidth="176.3333740234375" style="-fx-background-color: #D1B3B3; -fx-font-size: 15; -fx-alignment: center;" text="Белые" />
             <TableColumn fx:id="table_column_number" minWidth="0.0" prefWidth="20.0" style="-fx-background-color: #D1B3B3; -fx-alignment: center;" text="№" />
