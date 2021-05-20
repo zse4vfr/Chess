@@ -24,6 +24,8 @@ public class Exit {
 
     @FXML
     void initialize() {
+        button_yes.setSkin(new MyButtonSkin(button_yes, 0.5));
+        button_no.setSkin(new MyButtonSkin(button_no, 0.5));
         button_yes.setOnAction(event->{
             str = "yes";
             ((Stage) button_yes.getScene().getWindow()).close();

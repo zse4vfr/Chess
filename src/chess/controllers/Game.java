@@ -669,9 +669,7 @@ public class Game{
 
     public void SetTableData() {
         //устанавливаем значения откуда будут браться данные для таблицы
-        number_move = record.size();
-        while(number_move != 0)
-            record.remove(--number_move);
+
         table_column_number.setCellValueFactory(new PropertyValueFactory("number_move"));
         table_column_white.setCellValueFactory(new PropertyValueFactory("white_move"));
         table_column_black.setCellValueFactory(new PropertyValueFactory("black_move"));
