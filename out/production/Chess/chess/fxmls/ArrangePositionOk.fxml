@@ -22,7 +22,7 @@
                 <Font size="14.0" />
             </font>
         </Button>
-        <GridPane layoutX="30.0" layoutY="60.0" prefHeight="429.0" prefWidth="200.0">
+        <GridPane layoutX="40.0" layoutY="60.0" prefHeight="429.0" prefWidth="200.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -36,62 +36,62 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <ImageView fx:id="white_king">
+                <ImageView fx:id="white_king" fitHeight="60.0" fitWidth="60.0">
                     <image>
                         <Image url="@../images/white_figures/white_king.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="white_queen" GridPane.rowIndex="1">
+                <ImageView fx:id="white_queen" fitHeight="60.0" fitWidth="60.0" GridPane.rowIndex="1">
                     <image>
                         <Image url="@../images/white_figures/white_queen.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="white_rook" GridPane.rowIndex="2">
+                <ImageView fx:id="white_rook" fitHeight="60.0" fitWidth="60.0" GridPane.rowIndex="2">
                     <image>
                         <Image url="@../images/white_figures/white_rook.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="white_bishop" GridPane.rowIndex="3">
+                <ImageView fx:id="white_bishop" fitHeight="60.0" fitWidth="60.0" GridPane.rowIndex="3">
                     <image>
                         <Image url="@../images/white_figures/white_bishop.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="white_pawn" GridPane.rowIndex="5">
+                <ImageView fx:id="white_pawn" fitHeight="60.0" fitWidth="60.0" GridPane.rowIndex="5">
                     <image>
                         <Image url="@../images/white_figures/white_pawn.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="white_knight" GridPane.rowIndex="4">
+                <ImageView fx:id="white_knight" fitHeight="60.0" fitWidth="60.0" GridPane.rowIndex="4">
                     <image>
                         <Image url="@../images/white_figures/white_knight.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="black_bishop" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <ImageView fx:id="black_bishop" fitHeight="60.0" fitWidth="60.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                     <image>
                         <Image url="@../images/black_figures/black_bishop.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="black_king" GridPane.columnIndex="1">
+                <ImageView fx:id="black_king" fitHeight="60.0" fitWidth="60.0" GridPane.columnIndex="1">
                     <image>
                         <Image url="@../images/black_figures/black_king.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="black_knight" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                <ImageView fx:id="black_knight" fitHeight="60.0" fitWidth="60.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                     <image>
                         <Image url="@../images/black_figures/black_knight.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="black_pawn" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                <ImageView fx:id="black_pawn" fitHeight="60.0" fitWidth="60.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                     <image>
                         <Image url="@../images/black_figures/black_pawn.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="black_rook" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <ImageView fx:id="black_rook" fitHeight="60.0" fitWidth="60.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                     <image>
                         <Image url="@../images/black_figures/black_rook.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="black_queen" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <ImageView fx:id="black_queen" fitHeight="60.0" fitWidth="60.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <image>
                         <Image url="@../images/black_figures/black_queen.png" />
                     </image>

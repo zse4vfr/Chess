@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0" style="-fx-background-color: #6F6363;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chess.controllers.Task">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0" style="-fx-background-color: #6F6363;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chess.controllers.Task">
     <children>
         <Text fill="WHITE" layoutX="617.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Задачи">
             <font>
@@ -22,11 +22,16 @@
                         <Image url="@../images/Task/task1.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="button_play1" alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" prefHeight="58.0" prefWidth="125.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12;" text="Играть" textAlignment="CENTER" textFill="WHITE">
+                <Button fx:id="button_play1" alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" prefHeight="0.0" prefWidth="77.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12;" textAlignment="CENTER" textFill="WHITE">
                     <font>
                         <Font size="27.0" />
                     </font>
                 </Button>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Task/3x/Ресурс%2063@3x.png" />
+               </image>
+            </ImageView>
             </children>
         </StackPane>
         <StackPane alignment="BOTTOM_CENTER" cacheShape="false" centerShape="false" layoutX="1113.0" layoutY="150.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="218.0" prefWidth="239.0" scaleShape="false" style="-fx-background-color: #857676; -fx-background-radius: 20;">
