@@ -55,14 +55,14 @@ public class MainMenu {
         });
 
         button_play_comp.setOnAction(event->{
-            OpenWindow();
             setFlags(false, true, false);
+            OpenWindow();
             CloseWindow();
         });
 
         button_play2.setOnAction(event->{
-            OpenWindow();
             setFlags(true, false, false);
+            OpenWindow();
             CloseWindow();
         });
 
