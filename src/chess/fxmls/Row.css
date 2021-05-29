@@ -96,3 +96,22 @@
 -fx-background-color:  #857676;
 }
 
+.text-area {
+    text-area-background:  #6F6363 ;
+    text-background:#000000;
+    text-fill: #00ff00;
+
+}
+
+.text-area .content {
+    -fx-background-color: text-area-background ;
+    -fx-border-color: text-area-background;
+    -fx-highlight-fill: text-fill;
+    -fx-highlight-text-fill: text-background;
+    -fx-text-fill: text-fill;
+}
+
+.text-area.viewport{
+              -fx-background-color: text-area-background;
+          }
+

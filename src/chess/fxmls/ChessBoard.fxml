@@ -8,21 +8,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0" style="-fx-background-color: #6F6363;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0" style="-fx-background-color: #6F6363;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chess.controllers.ChessBoard">
     <children>
         <Text fill="WHITE" layoutX="538.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Шахамтная доска">
             <font>
                 <Font size="48.0" />
             </font>
         </Text>
-      <ImageView fitHeight="350.0" fitWidth="350.0" layoutX="62.0" layoutY="241.0">
+      <ImageView fx:id="image" fitHeight="350.0" fitWidth="350.0" layoutX="62.0" layoutY="263.0">
          <image>
-            <Image url="@../images/Rules/Скриншот%2019-05-2021%20224445%201.png" />
+            <Image url="@../images/Rules/ChessBoard.png" />
          </image>
       </ImageView>
-      <Label fx:id="text" layoutX="431.0" layoutY="152.0" textFill="#e7d1d1">
+      <Label fx:id="text" alignment="CENTER" layoutX="505.0" layoutY="149.0" prefHeight="582.0" prefWidth="832.0" textAlignment="JUSTIFY" textFill="#e7d1d1" wrapText="true">
          <font>
-            <Font size="28.0" />
+            <Font size="22.0" />
          </font>
       </Label>
       <Button fx:id="button_menu" alignment="CENTER" contentDisplay="TOP" layoutX="1250.0" layoutY="38.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="125.0" style="-fx-background-color: #857676; -fx-background-radius: 12; -fx-font-size: 20;" styleClass="context-menu" stylesheets="@Row.css" text="Меню" textFill="WHITE">
