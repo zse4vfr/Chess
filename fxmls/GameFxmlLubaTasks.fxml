@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0" style="-fx-background-color: #6F6363;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chess.controllers.GameTask">
+    <children>
+        <Button fx:id="button_task" layoutX="1066.0" layoutY="607.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" styleClass="context-menu" stylesheets="@Row.css" text="К задачам" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Button>
+        <Button fx:id="button_menu" layoutX="1066.0" layoutY="90.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="170.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" styleClass="context-menu" stylesheets="@Row.css" text="Меню" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Button>
+        <StackPane layoutX="43.0" layoutY="25.0" prefHeight="750.0" prefWidth="750.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" styleClass="context-menu" stylesheets="@Row.css" />
+        <GridPane fx:id="GridPane" layoutX="58.0" layoutY="40.0" prefHeight="720.0" prefWidth="720.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <StackPane fx:id="A1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.rowIndex="7">
+                    <children>
+                        <Text strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="a" StackPane.alignment="BOTTOM_RIGHT">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets bottom="2.0" right="3.0" />
+                            </StackPane.margin>
+                        </Text>
+                        <Text strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="1" StackPane.alignment="TOP_LEFT">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets left="3.0" />
+                            </StackPane.margin>
+                        </Text>
+                        <ImageView fx:id="a1" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="B1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                    <children>
+                        <Text depthTest="ENABLE" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="b" StackPane.alignment="BOTTOM_RIGHT">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets bottom="2.0" right="3.0" />
+                            </StackPane.margin>
+                        </Text>
+                        <ImageView fx:id="b1" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="H7" layoutX="103.0" layoutY="667.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                    <children>
+                        <ImageView fx:id="h7" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="C8" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="2">
+                    <children>
+                        <ImageView fx:id="c8" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="G8" layoutX="196.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="6">
+                    <children>
+                        <ImageView fx:id="g8" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="E8" layoutX="384.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="4">
+                    <children>
+                        <ImageView fx:id="e8" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="F7" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                    <children>
+                        <ImageView fx:id="f7" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="B7" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <ImageView fx:id="b7" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="B3" layoutX="666.0" layoutY="104.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <children>
+                        <ImageView fx:id="b3" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="G6" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                    <children>
+                        <ImageView fx:id="g6" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="E6" disable="true" focusTraversable="true" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                    <children>
+                        <ImageView fx:id="e6" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="C6" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                    <children>
+                        <ImageView fx:id="c6" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="F6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                    <children>
+                        <ImageView fx:id="f6" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="D6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                    <children>
+                        <ImageView fx:id="d6" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="G4" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                    <children>
+                        <ImageView fx:id="g4" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="E4" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                    <children>
+                        <ImageView fx:id="e4" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="C4" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                    <children>
+                        <ImageView fx:id="c4" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="A4" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.rowIndex="4">
+                    <children>
+                        <Text strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="4" StackPane.alignment="TOP_LEFT">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets left="3.0" />
+                            </StackPane.margin>
+                        </Text>
+                        <ImageView fx:id="a4" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="H5" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="7" GridPane.rowIndex="3">
+                    <children>
+                        <ImageView fx:id="h5" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="F5" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                    <children>
+                        <ImageView fx:id="f5" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="D5" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                    <children>
+                        <ImageView fx:id="d5" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="B5" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <children>
+                        <ImageView fx:id="b5" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="G2" layoutX="103.0" layoutY="480.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="6" GridPane.rowIndex="6">
+                    <children>
+                        <ImageView fx:id="g2" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="E2" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                    <children>
+                        <ImageView fx:id="e2" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="C2" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                    <children>
+                        <ImageView fx:id="c2" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="A2" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.rowIndex="6">
+                    <children>
+                        <Text strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="2" StackPane.alignment="TOP_LEFT">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets left="3.0" />
+                            </StackPane.margin>
+                        </Text>
+                        <ImageView fx:id="a2" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="H3" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="7" GridPane.rowIndex="5">
+                    <children>
+                        <ImageView fx:id="h3" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="F3" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                    <children>
+                        <ImageView fx:id="f3" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="D3" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                    <children>
+                        <ImageView fx:id="d3" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="A8" layoutX="572.0" layoutY="574.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;">
+                    <children>
+                        <Text strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="8" StackPane.alignment="TOP_LEFT">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets left="3.0" />
+                            </StackPane.margin>
+                        </Text>
+                        <ImageView fx:id="a8" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="H1" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="7" GridPane.rowIndex="7">
+                    <children>
+                        <Text strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="h" StackPane.alignment="BOTTOM_RIGHT">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets bottom="2.0" right="3.0" />
+                            </StackPane.margin>
+                        </Text>
+                        <ImageView fx:id="h1" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="F1" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="5" GridPane.rowIndex="7">
+                    <children>
+                        <Text strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="f" StackPane.alignment="BOTTOM_RIGHT">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets bottom="2.0" right="3.0" />
+                            </StackPane.margin>
+                        </Text>
+                        <ImageView fx:id="f1" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="D1" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                    <children>
+                        <Text strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="d" StackPane.alignment="BOTTOM_RIGHT">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets bottom="2.0" right="3.0" />
+                            </StackPane.margin>
+                        </Text>
+                        <ImageView fx:id="d1" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="B8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px; -fx-pref-height: 80; -fx-border-color: #857676; -fx-pref-width: 80;" GridPane.columnIndex="1">
+                    <children>
+                        <ImageView fx:id="b8" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="D8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px; -fx-pref-height: 80; -fx-border-color: #857676; -fx-pref-width: 80;" GridPane.columnIndex="3">
+                    <children>
+                        <ImageView fx:id="d8" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="A7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.rowIndex="1">
+                    <children>
+                        <Text strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="7" StackPane.alignment="TOP_LEFT">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets left="3.0" />
+                            </StackPane.margin>
+                        </Text>
+                        <ImageView fx:id="a7" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="B6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <children>
+                        <ImageView fx:id="b6" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="A5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.rowIndex="3">
+                    <children>
+                        <Text strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="5" StackPane.alignment="TOP_LEFT">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets left="3.0" />
+                            </StackPane.margin>
+                        </Text>
+                        <ImageView fx:id="a5" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="A3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.rowIndex="5">
+                    <children>
+                        <Text strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="3" StackPane.alignment="TOP_LEFT">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets left="3.0" />
+                            </StackPane.margin>
+                        </Text>
+                        <ImageView fx:id="a3" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="B4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <children>
+                        <ImageView fx:id="b4" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="B2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                    <children>
+                        <ImageView fx:id="b2" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="C7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <children>
+                        <ImageView fx:id="c7" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="C5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                    <children>
+                        <ImageView fx:id="c5" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="C3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                    <children>
+                        <ImageView fx:id="c3" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="C1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                    <children>
+                        <Text strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="c" StackPane.alignment="BOTTOM_RIGHT">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets bottom="2.0" right="3.0" />
+                            </StackPane.margin>
+                        </Text>
+                        <ImageView fx:id="c1" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="E7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                    <children>
+                        <ImageView fx:id="e7" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="E5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                    <children>
+                        <ImageView fx:id="e5" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="E3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                    <children>
+                        <ImageView fx:id="e3" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children></StackPane>
+                <StackPane fx:id="E1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                    <children>
+                        <Text strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="e" StackPane.alignment="BOTTOM_RIGHT">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets bottom="2.0" right="3.0" />
+                            </StackPane.margin>
+                        </Text>
+                        <ImageView fx:id="e1" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="F8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="5">
+                    <children>
+                        <ImageView fx:id="f8" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="F2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="5" GridPane.rowIndex="6">
+                    <children>
+                        <ImageView fx:id="f2" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="F4" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                    <children>
+                        <ImageView fx:id="f4" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="G7" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                    <children>
+                        <ImageView fx:id="g7" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="G5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                    <children>
+                        <ImageView fx:id="g5" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="G3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="6" GridPane.rowIndex="5">
+                    <children>
+                        <ImageView fx:id="g3" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="G1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="6" GridPane.rowIndex="7">
+                    <children>
+                        <Text strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="g" StackPane.alignment="BOTTOM_RIGHT">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets bottom="2.0" right="3.0" />
+                            </StackPane.margin>
+                        </Text>
+                        <ImageView fx:id="g1" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="H8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="7">
+                    <children>
+                        <ImageView fx:id="h8" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="H6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="7" GridPane.rowIndex="2">
+                    <children>
+                        <ImageView fx:id="h6" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="H4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="7" GridPane.rowIndex="4">
+                    <children>
+                        <ImageView fx:id="h4" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="H2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="7" GridPane.rowIndex="6">
+                    <children>
+                        <ImageView fx:id="h2" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="A6" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.rowIndex="2">
+                    <children>
+                        <Text strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="6" StackPane.alignment="TOP_LEFT">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets left="3.0" />
+                            </StackPane.margin>
+                        </Text>
+                        <ImageView fx:id="a6" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="D7" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #8B8171; -fx-background-radius: 12px;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                    <children>
+                        <ImageView fx:id="d7" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="D2" layoutX="103.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                    <children>
+                        <ImageView fx:id="d2" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+                <StackPane fx:id="D4" layoutX="196.0" layoutY="292.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="90.0" style="-fx-background-color: #6F6363; -fx-background-radius: 12px;" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                    <children>
+                        <ImageView fx:id="d4" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </StackPane>
+            </children>
+        </GridPane>
+      <Pane layoutX="926.0" layoutY="219.0" prefHeight="306.0" prefWidth="447.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" styleClass="context-menu" stylesheets="@Row.css">
+         <children>
+            <Label fx:id="label_number_task" layoutX="186.0" layoutY="27.0" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_txt" alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="63.0" prefHeight="214.0" prefWidth="408.0" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+         </children>
+      </Pane>
+    </children>
+</AnchorPane>
