@@ -16,20 +16,10 @@
         </Text>
       <ImageView fitHeight="295.0" fitWidth="295.0" layoutX="86.0" layoutY="263.0">
          <image>
-            <Image url="@../images/Rules/Скриншот%2019-05-2021%20224445%201.png" />
+            <Image url="@../images/Rules/ChessBoard.png" />
          </image>
       </ImageView>
         <Button fx:id="button_board" layoutX="111.0" layoutY="507.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="244.0" style="-fx-background-color: #857676; -fx-background-radius: 8px;" stylesheets="@Row.css" text="Шахматная доска" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
-            <font>
-                <Font size="24.0" />
-            </font>
-        </Button>
-      <ImageView fitHeight="295.0" fitWidth="295.0" layoutX="425.0" layoutY="263.0">
-         <image>
-            <Image url="@../images/Rules/Group%201.png" />
-         </image>
-      </ImageView>
-        <Button fx:id="button_movement" layoutX="450.0" layoutY="507.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="244.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" stylesheets="@Row.css" text="Передвижения фигур" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
             <font>
                 <Font size="24.0" />
             </font>
@@ -39,22 +29,22 @@
             <Font size="27.0" />
          </font>
       </Button>
-      <ImageView fitHeight="295.0" fitWidth="295.0" layoutX="764.0" layoutY="263.0">
+      <ImageView fitHeight="295.0" fitWidth="295.0" layoutX="570.0" layoutY="263.0">
          <image>
             <Image url="@../images/Rules/depositphotos_204988754-stock-illustration-chess-piece-bill-roll-characterizing%201%20(1).png" />
          </image>
       </ImageView>
-        <Button fx:id="button_figures" layoutX="789.0" layoutY="507.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="244.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" stylesheets="@Row.css" text="Шахматные фигуры" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+        <Button fx:id="button_figures" layoutX="600.0" layoutY="507.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="244.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" stylesheets="@Row.css" text="Шахматные фигуры" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button fx:id="button_other_rules" layoutX="1128.0" layoutY="507.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="244.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" stylesheets="@Row.css" text="Другие правила" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+        <Button fx:id="button_other_rules" layoutX="1080.0" layoutY="507.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="244.0" style="-fx-background-color: #857676; -fx-background-radius: 12px;" stylesheets="@Row.css" text="Другие правила" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-      <ImageView fitHeight="295.0" fitWidth="295.0" layoutX="1103.0" layoutY="263.0">
+      <ImageView fitHeight="295.0" fitWidth="295.0" layoutX="1050.0" layoutY="263.0">
          <image>
             <Image url="@../images/Rules/question_mark_PNG57%201%20(1).png" />
          </image>

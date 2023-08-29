@@ -19,9 +19,6 @@ public class Rules {
     private Button button_figures;
 
     @FXML
-    private Button button_movement;
-
-    @FXML
     private Button button_other_rules;
 
     @FXML
@@ -31,7 +28,6 @@ public class Rules {
     void initialize()
     {
         button_board.setSkin(new MyButtonSkin(button_board,0.9));
-        button_movement.setSkin(new MyButtonSkin(button_movement,0.9));
         button_other_rules.setSkin(new MyButtonSkin(button_other_rules,0.7));
         button_figures.setSkin(new MyButtonSkin(button_figures,0.7));
         button_menu.setSkin(new MyButtonSkin(button_menu,0.5));
@@ -48,11 +44,6 @@ public class Rules {
 
         button_figures.setOnAction(event->{
             FXMLLoader fxmlLoader = new FXMLLoader(Rules.class.getResource("/chess/fxmls/ChessFigures.fxml"));
-            Open(fxmlLoader);
-        });
-
-        button_movement.setOnAction(event->{
-            FXMLLoader fxmlLoader = new FXMLLoader(Rules.class.getResource("/chess/fxmls/ChessBoard.fxml"));
             Open(fxmlLoader);
         });
 

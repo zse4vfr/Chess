@@ -13,26 +13,7 @@
     -fx-max-height: 0;
 }
 
-.label {
-    -fx-font-size: 10pt;
-    -fx-font-family: "Segoe UI Semibold";
-    -fx-text-fill: white;
-    -fx-opacity: 0.6;
-}
 
-.label-bright {
-    -fx-font-size: 10pt;
-    -fx-font-family: "Segoe UI Semibold";
-    -fx-text-fill: white;
-    -fx-opacity: 1;
-}
-
-.label-header {
-    -fx-font-size: 10pt;
-    -fx-font-family: "Segoe UI Light";
-    -fx-text-fill: white;
-    -fx-opacity: 1;
-}
 
 .table-view {
     -fx-base: #1d1d1d;
@@ -48,7 +29,7 @@
 }
 
 .table-view .column-header, .table-view .filler {
-    -fx-size: 10;
+    -fx-size: 35;
     -fx-border-width: 0 0 1 0;
     -fx-background-color: transparent;
     -fx-border-color:
@@ -60,55 +41,28 @@
 }
 
 .table-view .column-header .label {
-    -fx-font-size: 15pt;
+    -fx-font-size: 20pt;
     -fx-font-family: "System";
     -fx-text-fill: white;
     -fx-alignment: center;
     -fx-opacity: 1;
 }
 
-.table-view .table-row-cell:filled: {
-    -fx-background-color: #D1B3B3;
+.table-view .table-row-cell: {
+    -fx-background-color:  #6F6363;
 }
 
-.split-pane:horizontal > .split-pane-divider {
-    -fx-border-color: #D1B3B3;
-    -fx-background-color: #D1B3B3;
-}
-
-.split-pane {
-    -fx-padding: 1 0 0 0;
-}
-
-.menu-bar {
-    -fx-background-color: derive(#1d1d1d,20%);
-}
 
 .context-menu {
     -fx-background-color: derive(#1d1d1d,50%);
 }
 
-.menu-bar .label {
-    -fx-font-size: 10pt;
-    -fx-font-family: "Segoe UI Light";
-     -fx-text-fill: black;
-     -fx-opacity: 1;
-}
-
-.menu .left-container {
-    -fx-background-color: black;
-}
 
 .text-field {
-    -fx-font-size: 10pt;
+    -fx-font-size: 12pt;
     -fx-font-family: "Segoe UI Semibold";
 }
 
-/*
- * Push Button в стиле Metro
- * Автор: Pedro Duque Vieira
- * http://pixelduke.wordpress.com/2012/10/23/jmetro-windows-8-controls-on-java/
- */
 .button {
     -fx-padding: 5 22 5 22;
     -fx-border-color:  #D1B3B3;
@@ -116,10 +70,12 @@
     -fx-background-radius: 20;
      -fx-background-color:  #D1B3B3;
     -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-    -fx-font-size: 14pt;
+    -fx-font-size: 11pt;
     -fx-text-fill: #d8d8d8;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
 }
+
+
 
 .check-box .box {
 
@@ -139,4 +95,23 @@
 
 -fx-background-color:  #857676;
 }
+
+.text-area {
+    text-area-background:  #6F6363 ;
+    text-background:#000000;
+    text-fill: #00ff00;
+
+}
+
+.text-area .content {
+    -fx-background-color: text-area-background ;
+    -fx-border-color: text-area-background;
+    -fx-highlight-fill: text-fill;
+    -fx-highlight-text-fill: text-background;
+    -fx-text-fill: text-fill;
+}
+
+.text-area.viewport{
+              -fx-background-color: text-area-background;
+          }
 

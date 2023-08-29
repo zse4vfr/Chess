@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0" style="-fx-background-color: #6F6363;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0" style="-fx-background-color: #6F6363;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chess.controllers.ChessBoard">
     <children>
         <Text fill="WHITE" layoutX="538.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Шахамтная доска">
             <font>
                 <Font size="48.0" />
             </font>
         </Text>
-        <ImageView fitHeight="350.0" fitWidth="350.0" layoutX="62.0" layoutY="241.0">
-            <image>
-                <Image url="@../images/Rules/pravila.jpg" />
-            </image>
-        </ImageView>
-        <ScrollPane layoutX="479.0" layoutY="153.0" prefHeight="587.0" prefWidth="862.0" style="-fx-background-color: #6F6363;">
-            <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="578.0" prefWidth="862.0" style="-fx-background-color: #6F6363;">
-                    <children>
-                        <Text fill="WHITE" layoutX="43.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Естественно, каждый полководец должен изучить расположение и рельеф местности, где ему предстоит планировать и вести сражения. Шахматисту в этом отношении проще, ведь все свои бои он будет проводить на одной и той же «местности», на стандартной шахматной доске. Но уж эту «местность» опытные игроки изучают досконально, помнят буквально по именам собственное имя каждой клеточки, ее цвет, знают в каком месте доски скорее всего будет происходить самая жаркая борьба, как и какие фигуры туда лучше подвести…Не пренебрегайте изучением шахматной доски! Театр военных действий где вам предстоит вести шахматные баталии — квадрат, в свою очередь поделенный на черные и белые квадратики — поля. Всего 64 поля, 32 белых и 32 черных.Черные и белые поля чередуются и, казалось бы, доска симметрична можно как угодно ее повернуть, ничего не изменится. Но это не так. Прежде чем начинать игру убедитесь, что ближнее к вам левое угловое поле черного цвета.У каждого поля шахматной доски есть свое собственное имя — координаты. Для этого используют латинские буквы a, b, c, d, e, f, g, h и цифры от 1 до 8, написанные по краям доски вот таким образом: Ряды из 8 полей, находящиеся напротив каждой из цифр, называются горизонталями, а столбцы из 8 полей, находящиеся напротив каждой из букв, называются вертикалями. Соответственно горизонтали и вертикали и обозначаются своей цифрой или буквой. Горизонталь 1, горизонталь 2… или вертикаль а, вертикаль b и т.д. Таким образом, каждое поле принадлежит одной вертикали и одной горизонтали, от этого каждое поле и получает свое имя — координаты. К примеру, поле находящееся одновременно на вертикали f и на горизонтали 4 имеет имя — поле f4. Поля шахматной доски одного цвета, находящиеся на одной линии называются диагоналями." wrappingWidth="800.0">
-                            <font>
-                                <Font size="33.0" />
-                            </font>
-                        </Text>
-                    </children>
-                </AnchorPane>
-            </content>
-        </ScrollPane>
+      <ImageView fx:id="image" fitHeight="350.0" fitWidth="350.0" layoutX="62.0" layoutY="263.0">
+         <image>
+            <Image url="@../images/Rules/ChessBoard.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="text" alignment="CENTER" layoutX="505.0" layoutY="149.0" prefHeight="582.0" prefWidth="832.0" textAlignment="JUSTIFY" textFill="#e7d1d1" wrapText="true">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="button_menu" alignment="CENTER" contentDisplay="TOP" layoutX="1250.0" layoutY="38.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="125.0" style="-fx-background-color: #857676; -fx-background-radius: 12; -fx-font-size: 20;" styleClass="context-menu" stylesheets="@Row.css" text="Меню" textFill="WHITE">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_rules" alignment="CENTER" contentDisplay="TOP" layoutX="62.0" layoutY="38.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="125.0" style="-fx-background-color: #857676; -fx-background-radius: 12; -fx-font-size: 20;" styleClass="context-menu" stylesheets="@Row.css" text="Правила" textFill="WHITE">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>
